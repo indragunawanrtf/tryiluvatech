@@ -6,16 +6,19 @@
           <div class="card hoverable">
             <div class="card-content blue-grey lighten-5">
               <span class="card-title">
-                <h2>Log in</h2>
 
                 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  <div class="form-inputs">
-                    <%= f.input :email, required: false, autofocus: true %>
-                    <%= f.input :password, required: false %>
-                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  <div class="input-field">
+                    <%= f.label :email %>
+                    <%= f.email_field :email, autofocus: false %>
                   </div>
 
-                  <div class="form-actions">
+                  <div class="input-field">
+                    <%= f.label :password %>
+                    <%= f.input_field :password, autofocus: false %>
+                  </div>
+
+                  <div class="form-actions center">
                     <%= f.button :submit, "Log in" %>
                   </div>
                 <% end %>
@@ -24,4 +27,4 @@
           </div>
         </div>
       </div>
-      </di
+    </div>
